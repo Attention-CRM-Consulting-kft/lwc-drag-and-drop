@@ -15,7 +15,7 @@
         {placeholder}
       </div>
       <template for:each={_items} for:item="item" for:index="index">
-        <div key={item._dragDropItemId} class={item.styleClass} data-index={index} onmousedown={handleItemMouseDown}
+        <div key={item._dragDropItemId} class={item._dragAndDropStyleClass} data-index={index} onmousedown={handleItemMouseDown}
              oncontextmenu={handleContextMenu} ontouchstart={handleItemTouchStart} style={item.style}>
           {item._dragDropName}
         </div>

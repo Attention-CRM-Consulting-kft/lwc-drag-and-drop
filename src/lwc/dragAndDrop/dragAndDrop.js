@@ -118,10 +118,10 @@ export default class DragAndDrop extends LightningElement {
     } else {
       item._dragDropName = item._dragDropItemId;
     }
-    if (item.styleClass == null) {
-      item.styleClass = '';
+    item._dragAndDropStyleClass = 'item';
+    if (item.styleClass != null) {
+      item._dragAndDropStyleClass += ' ' + item.styleClass;
     }
-    item.styleClass += ' item';
   }
 
   renderedCallback() {
@@ -974,8 +974,9 @@ export default class DragAndDrop extends LightningElement {
 
   fireItemsChangeEvent(additionalData) {
     let items = this._items.map(item => {
-      item._dragDropItemId;
-      item._dragDropName;
+      delete item._dragDropItemId;
+      delete item._dragDropName;
+      delete item._dragAndDropStyleClass;
       return item;
     });
     let changeEvent = new CustomEvent("change", {detail: {items, ...additionalData}, bubbles: true, composed: true});

@@ -14,6 +14,8 @@ export default class DragAndDropDemo extends LightningElement {
       this.items1.push({ name: "Foo " + i });
       this.items2.push({ name: "Bar " + i });
     }
+    this.items1[0].style = "font-weight: bold;";
+    this.items2[0].styleClass = "slds-text-title_bold";
   }
 
   handleItemsChange(event) {
