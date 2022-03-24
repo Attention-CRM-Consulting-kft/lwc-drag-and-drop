@@ -1,0 +1,33 @@
+<!--
+ - Created by GM on 3/24/2022.
+ -->
+
+<!-- Drag And Drop Demo -->
+<template>
+  <div class="slds-grid slds-grid_align-space" style="height: 45rem;width: 40rem;">
+    <div style="width: 10rem;">
+      <c-drag-and-drop
+        items={items1}
+        display-field="name"
+        name="items1"
+        onchange={handleItemsChange}
+        group="1"
+        orderable
+        cloneable
+        deletable
+      ></c-drag-and-drop>
+    </div>
+    <div style="width: 10rem;">
+      <c-drag-and-drop
+        items={items2}
+        display-field="name"
+        name="items2"
+        onchange={handleItemsChange}
+        group="1"
+        orderable
+        cloneable
+        deletable
+      ></c-drag-and-drop>
+    </div>
+  </div>
+</template>
