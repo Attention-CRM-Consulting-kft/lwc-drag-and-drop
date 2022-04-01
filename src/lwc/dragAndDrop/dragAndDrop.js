@@ -974,10 +974,11 @@ export default class DragAndDrop extends LightningElement {
 
   fireItemsChangeEvent(additionalData) {
     let items = this._items.map(item => {
-      delete item._dragDropItemId;
-      delete item._dragDropName;
-      delete item._dragAndDropStyleClass;
-      return item;
+      let clone = {...item};
+      delete clone._dragDropItemId;
+      delete clone._dragDropName;
+      delete clone._dragAndDropStyleClass;
+      return clone;
     });
     let changeEvent = new CustomEvent("change", {detail: {items, ...additionalData}, bubbles: true, composed: true});
     //console.log(`changeEvent.detail`, JSON.parse(JSON.stringify(changeEvent.detail)));
